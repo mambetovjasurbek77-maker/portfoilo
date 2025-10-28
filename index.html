@@ -441,33 +441,97 @@
 
         .certificate-card {
             background-color: var(--card-bg);
-            padding: 25px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            border-left: 4px solid var(--accent-green);
+            overflow: hidden;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .certificate-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 20px var(--shadow);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
         }
 
-        .certificate-card h3 {
+        .certificate-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .certificate-card:hover .certificate-image {
+            transform: scale(1.05);
+        }
+
+        .certificate-info {
+            padding: 20px;
+        }
+
+        .certificate-info h3 {
             font-size: 20px;
             margin-bottom: 10px;
             color: var(--accent-green);
         }
 
-        .certificate-card p {
+        .certificate-info p {
             color: var(--text-secondary);
             margin-bottom: 8px;
+            font-size: 14px;
         }
 
         .certificate-date {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
             font-style: italic;
+        }
+
+        .certificate-provider {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
         }
 
         .contact-content {
@@ -748,7 +812,7 @@
                     <a href="https://t.me/jasurbekmambetov" target="_blank" class="contact-link">
                         💬 Telegram
                     </a>
-                    <a href="https://instagram.com/jasurbek_mambetov_" target="_blank" class="contact-link">
+                    <a href="https://instagram.com/m.jasurbek.k" target="_blank" class="contact-link">
                         📸 Instagram
                     </a>
                 </div>

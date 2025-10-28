@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Jasurbek Mambetov - Computer Engineering Student | Portfolio</title>
+    <meta name="description" content="Jasurbek Mambetov - TATU Samarqand Computer Engineering talabasi. Python, C++, Arduino va web dasturlash bilan shug'ullanaman. Loyihalarim va sertifikatlarim bilan tanishing.">
+    <meta name="keywords" content="Jasurbek Mambetov, Computer Engineering, TATU Samarqand, Python, C++, Arduino, Web Developer, Portfolio, Dasturchi">
+    <meta name="author" content="Jasurbek Mambetov">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Jasurbek Mambetov - Computer Engineering Student">
+    <meta property="og:description" content="TATU Samarqand Computer Engineering talabasi. Dasturlash, kiber xavfsizlik va Arduino loyihalari.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mammbetovjasurbek77-marker.github.io/portfolio/">
+    <meta property="og:image" content="https://mammbetovjasurbek77-marker.github.io/portfolio/profile.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jasurbek Mambetov - Computer Engineering Student">
+    <meta name="twitter:description" content="TATU Samarqand Computer Engineering talabasi. Dasturlash va Arduino loyihalari.">
+    <meta name="twitter:image" content="https://mammbetovjasurbek77-marker.github.io/portfolio/profile.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --border-color: #e5e5e5;
+            --card-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border-color: #333333;
+            --card-bg: #151515;
+            --shadow: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        [data-theme="dark"] nav {
+            background-color: rgba(10, 10, 10, 0.9);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-toggle:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent-blue);
+            transform: rotate(180deg);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, var(--accent-blue), var(--accent-green)) border-box;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        [data-theme="dark"] .profile-image {
+            background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+                        linear-gradient(135deg, var(--accent-blue), var(--accent-green)) border-box;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--shadow);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .tag {
+            padding: 10px 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+            border-color: var(--accent-blue);
+        }
+
+        .skill-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+        }
+
+        .skill-bar {
+            background-color: var(--bg-secondary);
+            height: 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+        }
+
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            padding: 5px 12px;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .project-btn {
+            flex: 1;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .project-btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            color: white;
+        }
+
+        .project-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .project-btn-secondary {
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            background-color: transparent;
+        }
+
+        .project-btn-secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .certificate-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-green);
+            transition: all 0.3s;
+        }
+
+        .certificate-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .certificate-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--accent-green);
+        }
+
+        .certificate-card p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .certificate-date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 15px 30px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 30px;
+                gap: 25px;
+                border-bottom: 1px solid var(--border-color);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 10px 30px var(--shadow);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                font-size: 18px;
+                padding: 10px 0;
+            }
+
+            .theme-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">JM</div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="closeMenu()">Haqimda</a></li>
+                <li><a href="#skills" onclick="closeMenu()">Ko'nikmalar</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Loyihalar</a></li>
+                <li><a href="#certificates" onclick="closeMenu()">Sertifikatlar</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Aloqa</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <img src="image.jpg" alt="Jasurbek Mambetov" class="profile-image" id="profileImage">
+            <h1>Jasurbek Mambetov</h1>
+            <h2>Computer Engineering Student & Developer</h2>
+            <p>TATU Samarqand filialida o'qiyman. Dasturlash, kiber xavfsizlik va Arduino loyihalari bilan shug'ullanaman.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">Loyihalarimni ko'rish</a>
+                <a href="#contact" class="btn btn-secondary">Bog'lanish</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Haqimda</h2>
+            <div class="about-content">
+                <p>Men Toshkent Axborot Texnologiyalari Universiteti Samarqand filialida Computer Engineering yo'nalishida ta'lim olayotgan talabamanю</p>
+                <p>Texnologiya va innovatsiyalarga qiziqaman, ayniqsa dasturlash, kiber xavfsizlik va Arduino platformasi orqali turli loyihalar yaratishni yaxshi ko'raman.</p>
+                <div class="about-tags">
+                    <span class="tag">🎓 TATU Samarqand</span>
+                    <span class="tag">💻 Computer Engineering</span>
+                    <span class="tag">🔐 Cyber Security</span>
+                    <span class="tag">🤖 Arduino Projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Ko'nikmalarim</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Boshlang'ich daraja</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>C++</h3>
+                    <p>Boshlang'ich daraja</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>HTML & CSS</h3>
+                    <p>Kurs tugatgan</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Arduino</h3>
+                    <p>Loyihalar yaratish</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Loyihalarim</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x220/3b82f6/ffffff?text=Arduino+Robot" alt="Arduino Robot" class="project-image">
+                    <div class="project-content">
+                        <h3>Arduino Robot Mashina</h3>
+                        <p>Ultrasonik sensor yordamida to'siqlardan qochib harakatlanadigan avtonom robot mashina. Arduino UNO va motor drayverlari asosida yaratilgan.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Arduino</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Robotics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mammbetovjasurbek77-marker" target="_blank" class="project-btn project-btn-primary">
+                                💻 GitHub'da ko'rish
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x220/10b981/ffffff?text=Portfolio+Website" alt="Portfolio Website" class="project-image">
+                    <div class="project-content">
+                        <h3>Shaxsiy Portfolio Sayti</h3>
+                        <p>HTML, CSS va JavaScript yordamida yaratilgan zamonaviy va responsiv portfolio sayti. Dark/Light mode va smooth animatsiyalar bilan.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mammbetovjasurbek77-marker" target="_blank" class="project-btn project-btn-primary">
+                                💻 GitHub'da ko'rish
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x220/8b5cf6/ffffff?text=Python+Project" alt="Python Project" class="project-image">
+                    <div class="project-content">
+                        <h3>Python Loyihangiz</h3>
+                        <p>Bu yerga o'zingizning Python loyihangiz haqida ma'lumot yozing. Qanday muammo hal qilganingiz va qanday texnologiyalar ishlatganingizni ko'rsating.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mammbetovjasurbek77-marker" target="_blank" class="project-btn project-btn-primary">
+                                💻 GitHub'da ko'rish
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <div class="container">
+            <h2 class="section-title">Sertifikatlarim</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <h3>HTML & CSS Kursi</h3>
+                    <p>Front-end dasturlash asoslari bo'yicha kurs muvaffaqiyatli yakunlangan.</p>
+                    <p class="certificate-date">📅 2024</p>
+                </div>
+                <div class="certificate-card">
+                    <h3>Python Asoslari</h3>
+                    <p>Python dasturlash tili asoslari va OOP konseptlari o'rganilgan.</p>
+                    <p class="certificate-date">📅 2024</p>
+                </div>
+                <div class="certificate-card">
+                    <h3>Arduino Dasturlash</h3>
+                    <p>Arduino platformasi va elektron qurilmalar bilan ishlash ko'nikmalari.</p>
+                    <p class="certificate-date">📅 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Bog'lanish</h2>
+            <div class="contact-content">
+                <p>Agar birgalikda ishlashni yoki savol berishni xohlasangiz, men bilan bog'laning!</p>
+                <div class="contact-links">
+                    <a href="mailto:mambetovjasurbek06@gmail.com" class="contact-link">
+                        📧 Email
+                    </a>
+                    <a href="https://github.com/mammbetovjasurbek77-marker" target="_blank" class="contact-link">
+                        💻 GitHub
+                    </a>
+                    <a href="https://t.me/jasurbekmambetov" target="_blank" class="contact-link">
+                        💬 Telegram
+                    </a>
+                    <a href="https://instagram.com/m.jasurbek.k" target="_blank" class="contact-link">
+                        📸 Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jasurbek Mambetov. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            
+            const themeIcon = document.querySelector('.theme-toggle');
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            const themeIcon = document.querySelector('.theme-toggle');
+            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

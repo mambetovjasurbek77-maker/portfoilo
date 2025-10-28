@@ -542,29 +542,69 @@
 
         .contact-links {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
-            margin-top: 30px;
+            margin-top: 40px;
             flex-wrap: wrap;
         }
 
         .contact-link {
-            padding: 15px 30px;
-            background-color: var(--card-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
             text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 600;
-            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            font-size: 36px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px var(--shadow);
+            position: relative;
         }
 
         .contact-link:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px var(--shadow);
+        }
+
+        .contact-link::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: -30px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .contact-link:hover::after {
+            opacity: 1;
+        }
+
+        .contact-email {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .contact-github {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        [data-theme="dark"] .contact-github {
+            background: white;
+            color: #000;
+        }
+
+        .contact-telegram {
+            background: linear-gradient(135deg, #0088cc, #00b4d8);
+            color: white;
+        }
+
+        .contact-instagram {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
         }
 
         footer {
@@ -823,5 +863,19 @@
             <div class="contact-content">
                 <p>Agar birgalikda ishlashni yoki savol berishni xohlasangiz, men bilan bog'laning!</p>
                 <div class="contact-links">
-                    <a href="mailto:mambetovjasurbek06@gmail.com" class="contact-link">
-                        📧 Email
+                    <a href="mailto:mambetovjasurbek06@gmail.com" class="contact-link contact-email" data-label="Email" target="_blank">
+                        📧
+                    </a>
+                    <a href="https://github.com/mammbetovjasurbek77-marker" class="contact-link contact-github" data-label="GitHub" target="_blank">
+                        💻
+                    </a>
+                    <a href="https://t.me/jasurbekmambetov" class="contact-link contact-telegram" data-label="Telegram" target="_blank">
+                        💬
+                    </a>
+                    <a href="https://instagram.com/m.jasurbek.k" class="contact-link contact-instagram" data-label="Instagram" target="_blank">
+                        📸
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>

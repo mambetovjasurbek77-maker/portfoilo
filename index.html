@@ -706,7 +706,7 @@
         <div class="container">
             <h2 class="section-title">Haqimda</h2>
             <div class="about-content">
-                <p>Men Toshkent Axborot Texnologiyalari Universiteti Samarqand filialida Computer Engineering yo'nalishida ta'lim olayotgan talabamanю</p>
+                <p>Men Toshkent Axborot Texnologiyalari Universiteti Samarqand filialida Computer Engineering yo'nalishida ta'lim olayotgan talabaman</p>
                 <p>Texnologiya va innovatsiyalarga qiziqaman, ayniqsa dasturlash, kiber xavfsizlik va Arduino platformasi orqali turli loyihalar yaratishni yaxshi ko'raman.</p>
                 <div class="about-tags">
                     <span class="tag">🎓 TATU Samarqand</span>
@@ -879,3 +879,17 @@
             </div>
         </div>
     </section>
+ <script> 
+  function openLightbox(imageSrc) {
+    const lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox", "active");
+    lightbox.innerHTML = `
+      <button class="lightbox-close" onclick="this.parentElement.remove()">✕</button>
+      <img src="${imageSrc}" class="lightbox-content">
+    `;
+    document.body.appendChild(lightbox);
+  }
+  </script>
+
+</body>
+</html>

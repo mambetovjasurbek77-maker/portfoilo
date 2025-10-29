@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags -->
     <title>Jasurbek Mambetov - Computer Engineering Student | Portfolio</title>
-    <meta name="description" content="Jasurbek Mambetov - TATU Samarqand Computer Engineering talabasi. Python, C++, Arduino va web dasturlash bilan shug'ullanaman. Loyihalarim va sertifikatlarim bilan tanishing.">
-    <meta name="keywords" content="Jasurbek Mambetov, Computer Engineering, TATU Samarqand, Python, C++, Arduino, Web Developer, Portfolio, Dasturchi">
+    <meta name="description" content="Jasurbek Mambetov - TATU Samarqand Computer Engineering talabasi. Python, C++, Arduino va web dasturlash bilan shug'ullanaman.">
+    <meta name="keywords" content="Jasurbek Mambetov, Computer Engineering, TATU Samarqand, Python, C++, Arduino, Web Developer, Portfolio">
     <meta name="author" content="Jasurbek Mambetov">
     <meta name="robots" content="index, follow">
     
@@ -17,12 +17,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mammbetovjasurbek77-marker.github.io/portfolio/">
     <meta property="og:image" content="https://mammbetovjasurbek77-marker.github.io/portfolio/image.jpg">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jasurbek Mambetov - Computer Engineering Student">
-    <meta name="twitter:description" content="TATU Samarqand Computer Engineering talabasi. Dasturlash va Arduino loyihalari.">
-    <meta name="twitter:image" content="https://mammbetovjasurbek77-marker.github.io/portfolio/image.jpg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
@@ -82,11 +76,10 @@
             padding: 20px 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.9);
         }
 
         [data-theme="dark"] nav {
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(10, 10, 10, 0.95);
         }
 
         nav .container {
@@ -425,17 +418,6 @@
             box-shadow: 0 5px 15px var(--shadow);
         }
 
-        .project-btn-secondary {
-            border: 2px solid var(--border-color);
-            color: var(--text-primary);
-            background-color: transparent;
-        }
-
-        .project-btn-secondary:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
         .certificates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -579,6 +561,7 @@
             white-space: nowrap;
             opacity: 0;
             transition: opacity 0.3s;
+            color: var(--text-primary);
         }
 
         .contact-link:hover::after {
@@ -638,6 +621,10 @@
                 box-shadow: 0 10px 30px var(--shadow);
             }
 
+            [data-theme="dark"] .nav-links {
+                background-color: var(--bg-primary);
+            }
+
             .nav-links.active {
                 transform: translateY(0);
             }
@@ -680,14 +667,14 @@
     <nav>
         <div class="container">
             <div class="logo">JM</div>
-            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" id="menuToggle">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" onclick="closeMenu()">Haqimda</a></li>
                 <li><a href="#skills" onclick="closeMenu()">Ko'nikmalar</a></li>
                 <li><a href="#projects" onclick="closeMenu()">Loyihalar</a></li>
                 <li><a href="#certificates" onclick="closeMenu()">Sertifikatlar</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Aloqa</a></li>
-                <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button></li>
             </ul>
         </div>
     </nav>
@@ -822,17 +809,17 @@
             <h2 class="section-title">Sertifikatlarim</h2>
             <div class="certificates-grid">
                 <div class="certificate-card" onclick="openLightbox('cert1.jpg')">
-                    <img src="https://via.placeholder.com/400x200/10b981/ffffff?text=HTML+CSS+Certificate" alt="HTML & CSS Certificate" class="certificate-image">
+                    <img src="cert1.jpg" alt="HTML & CSS Certificate" class="certificate-image">
                     <div class="certificate-info">
                         <h3>Front-end Kursi</h3>
                         <p class="certificate-provider">📚 Platforma: IT Center / IT PARK</p>
                         <p>Front-end dasturlash asoslari bo'yicha kurs muvaffaqiyatli yakunlangan.</p>
-                        <p class="certificate-date">📅 2022 yil</p>
+                        <p class="certificate-date">📅 2024 yil</p>
                     </div>
                 </div>
 
                 <div class="certificate-card" onclick="openLightbox('cert2.jpg')">
-                    <img src="https://via.placeholder.com/400x200/3b82f6/ffffff?text=Python+Certificate" alt="Kompyuter savodxonligi Certificate" class="certificate-image">
+                    <img src="cert2.jpg" alt="Kompyuter savodxonligi" class="certificate-image">
                     <div class="certificate-info">
                         <h3>Kompyuter savodxonligi</h3>
                         <p class="certificate-provider">📚 Platforma: IT Park / UNDP</p>
@@ -845,9 +832,9 @@
                     <img src="https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Cybersecurity+Certificate" alt="Cybersecurity Certificate" class="certificate-image">
                     <div class="certificate-info">
                         <h3>Cybersecurity</h3>
-                        <p class="certificate-provider">📚 Platforma: COURSERA</p>
+                        <p class="certificate-provider">📚 Platforma: Cousera</p>
                         <p>Kiberxavfsizlik boshlang'ish tushunchalari va Linux bilan ishlash ko'nikmalari.</p>
-                        <p class="certificate-date">📅 2024 yil</p>
+                        <p class="certificate-date">📅 2025 yil</p>
                     </div>
                 </div>
             </div>
@@ -856,8 +843,8 @@
 
     <!-- Lightbox Modal -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close">&times;</button>
-        <img src="" alt="Certificate" class="lightbox-content" id="lightboxImage">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="Certificate" class="lightbox-content" id="lightboxImage" onclick="event.stopPropagation()">
     </div>
 
     <section id="contact">
@@ -882,3 +869,105 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jasurbek Mambetov. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle with localStorage
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            
+            const themeIcon = document.getElementById('themeToggle');
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            
+            // Save to localStorage
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            navLinks.classList.toggle('active');
+            
+            // Change icon
+            if (navLinks.classList.contains('active')) {
+                menuToggle.textContent = '✕';
+            } else {
+                menuToggle.textContent = '☰';
+            }
+        }
+
+        // Close Mobile Menu
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            navLinks.classList.remove('active');
+            menuToggle.textContent = '☰';
+        }
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Load saved theme on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            const themeIcon = document.getElementById('themeToggle');
+            themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
